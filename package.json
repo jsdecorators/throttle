@@ -1,7 +1,8 @@
 {
   "name": "@jsdecorators/throttle",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.1",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": "git@github.com:iMyth/-throttle.git",
   "license": "MIT",
   "scripts": {
