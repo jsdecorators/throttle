@@ -19,5 +19,11 @@
   "dependencies": {
     "@types/lodash.throttle": "^4.1.6",
     "lodash.throttle": "^4.1.1"
-  }
+  },
+  "keywords": [
+    "typesript",
+    "decorator",
+    "throttle",
+    "lodash"
+  ]
 }
