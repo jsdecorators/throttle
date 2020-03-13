@@ -18,12 +18,13 @@ or
 ## how to use
 
 ```ts
+import throttle from '@jsdecorators/throttle';
 
 class MyClass {
 
   @throttle(100)
   onScroll() {
-    console.log('onScroll is called!')
+    console.log('onScroll is called!');
   }
 
 }
