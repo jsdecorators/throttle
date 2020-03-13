@@ -5,7 +5,7 @@ interface ThrottleSettings {
   trailing?: boolean;
 }
 
-export default function (wait: number, options: ThrottleSettings = {}) {
+export default function(wait: number, options: ThrottleSettings = {}) {
   return (target: any, name: string, descriptor: PropertyDescriptor) => {
     return {
       configurable: true,
@@ -14,11 +14,11 @@ export default function (wait: number, options: ThrottleSettings = {}) {
         Object.defineProperty(this, name, {
           configurable: true,
           enumerable: descriptor.enumerable,
-          value: throttle(descriptor.value, wait, options)
+          value: throttle(descriptor.value, wait, options),
         });
 
         return this[name];
-      }
+      },
     };
   };
 }
