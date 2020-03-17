@@ -36,7 +36,7 @@ interface ThrottleSettings {
  * @returns {Function} Returns the new throttled function.
  * @example
  * import throttle from '@jsdecorators/throttle';
- * 
+ *
  * class MyClass {
  *   @throttle(100)
  *   func() {

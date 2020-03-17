@@ -4,6 +4,8 @@ const continuesCall = (callback: () => void, wait: number) => setInterval(callba
 
 const throttledFunction = jest.fn(() => true);
 
+let handler = 0;
+
 class MyClass {
   @throttle(100)
   throttledFunction() {
@@ -13,9 +15,13 @@ class MyClass {
 
 it('should to have been called for 20 times', done => {
   const myClass = new MyClass();
-  continuesCall(myClass.throttledFunction, 10);
+  handler = continuesCall(myClass.throttledFunction, 10);
   setTimeout(() => {
     expect(throttledFunction).toHaveBeenCalledTimes(20);
     done();
   }, 2e3);
+});
+
+afterAll(() => {
+  clearInterval(handler);
 });
