@@ -1,5 +1,8 @@
 # @jsdecorators/throttle
 
+>Encapsulate `lodash.throttle` to a decorator.
+For further details please check [lodash/throttle.js](https://github.com/lodash/lodash/blob/master/throttle.js)
+
 ## install
 ```sh
 
@@ -15,7 +18,7 @@ or
 
 ```
 
-## how to use
+## usage
 
 ```ts
 import throttle from '@jsdecorators/throttle';
