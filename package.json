@@ -1,9 +1,9 @@
 {
   "name": "@jsdecorators/throttle",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "repository": "git@github.com:iMyth/-throttle.git",
+  "repository": "git@github.com:jsdecorators/throttle.git",
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.json",
