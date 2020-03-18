@@ -28,7 +28,7 @@
     "lodash.throttle": "^4.1.1"
   },
   "keywords": [
-    "typesript",
+    "typescript",
     "decorator",
     "throttle",
     "lodash"
