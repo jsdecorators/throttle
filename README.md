@@ -27,7 +27,7 @@ class MyClass {
 
   @throttle(100)
   onScroll() {
-    console.log('onScroll is called!');
+    // this function would be called every 100ms
   }
 
 }
