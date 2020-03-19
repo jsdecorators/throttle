@@ -45,5 +45,6 @@ export default function (wait: number, options?: ThrottleSettings): (target: any
     configurable: boolean;
     enumerable: boolean | undefined;
     get(this: any): any;
+    set(this: any, value: any): void;
 };
 export {};

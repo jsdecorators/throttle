@@ -49,14 +49,20 @@ export default function(wait: number, options: ThrottleSettings = {}) {
     return {
       configurable: true,
       enumerable: descriptor.enumerable,
-      get(this: any): any {
+      get(this: any) {
         Object.defineProperty(this, name, {
-          configurable: true,
-          enumerable: descriptor.enumerable,
+          ...descriptor,
           value: throttle(descriptor.value, wait, options),
         });
 
         return this[name];
+      },
+      set(this: any, value: any) {
+        if (descriptor.set) {
+          descriptor.set.call(this, value);
+        } else {
+          this[name] = value;
+        }
       },
     };
   };

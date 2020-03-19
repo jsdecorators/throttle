@@ -10,10 +10,13 @@ class MyClass {
   @throttle(100)
   throttledFunction() {
     throttledFunction();
+    return this.myProperty;
   }
+
+  myProperty = 'myProperty';
 }
 
-it('should to have been called for 20 times', done => {
+it('should have been called for 20 times', done => {
   const myClass = new MyClass();
   handler = continuesCall(myClass.throttledFunction, 10);
   setTimeout(() => {
@@ -22,6 +25,13 @@ it('should to have been called for 20 times', done => {
   }, 2e3);
 });
 
-afterAll(() => {
+it('should be worked well with bind', () => {
+  const myClass = new MyClass();
+  myClass.throttledFunction = myClass.throttledFunction.bind(myClass);
+  const fn = myClass.throttledFunction;
+  expect(fn.call(undefined)).toBe('myProperty');
+});
+
+afterEach(() => {
   clearInterval(handler);
 });
